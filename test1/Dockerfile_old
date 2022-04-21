@@ -1,0 +1,22 @@
+FROM rocker/r-ver:latest
+
+WORKDIR /var
+
+RUN apt-get update -qq && apt-get install -y --no-install-recommends \
+  git-core \
+  libssl-dev \
+  libcurl4-gnutls-dev \
+  curl \
+  libsodium-dev \
+  libxml2-dev
+
+#RUN R -e "install.packages(c('plumber', 'reticulate','tensorflow', 'keras'))"
+RUN R -e "install.packages(c('plumber'))"
+
+
+COPY ./startup.R /var/startup.R
+COPY ./plumber.R /var/plumber.R
+
+EXPOSE 8000
+
+#ENTRYPOINT ["R", "-f", "/var/startup.R", "--slave"]
