@@ -1,10 +1,10 @@
 # api.R 
 library(plumber)
-library(reticulate)
-library(tensorflow)
-library(keras)
+#library(reticulate)
+#library(tensorflow)
+#library(keras)
 
-keras::dataset_mnist()
+#keras::dataset_mnist()
 
 #* @get /add
 add <- function(x, y){
