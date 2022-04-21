@@ -11,10 +11,10 @@ FROM rstudio/plumber
 COPY / /
 
 RUN R -e "install.packages('plumber')"
-RUN R -e "install.packages('reticulate')"
-RUN R -e "install.packages('tensorflow')"
-RUN R -e "install.packages('keras')"
+#RUN R -e "install.packages('reticulate')"
+#RUN R -e "install.packages('tensorflow')"
+#RUN R -e "install.packages('keras')"
 
 EXPOSE 8000
 
-ENTRYPOINT ["Rscript", "serve.R"]
+#ENTRYPOINT ["Rscript", "serve.R"]
