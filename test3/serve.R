@@ -17,7 +17,7 @@ library(keras)
 
 
 
-#keras::dataset_mnist()
+keras::dataset_mnist()
 
 r <- plumb("api.R")
 #r$run()
